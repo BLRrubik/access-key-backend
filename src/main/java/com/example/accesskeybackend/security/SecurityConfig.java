@@ -30,7 +30,7 @@ public class SecurityConfig {
                 .cors().disable()
                 .authorizeHttpRequests(auth ->
                         auth
-                                .requestMatchers("/api/public/**").permitAll()
+                                .requestMatchers("/api/public/**", "/api/web/checkIpv6Support").permitAll()
                                 .requestMatchers("/actuator/health").permitAll()
                                 .anyRequest().authenticated()
                 )
